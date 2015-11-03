@@ -1,0 +1,107 @@
+CONTACT DETAILS :
+-----------------
+
+Georgios Karagiannis
+School of Mathematics, University of Bristol
+University Walk, Bristol, BS8 1TW, UK
+Email (current): Georgios.Karagiannis@pnnl.gov
+
+Christophe Andrieu
+School of Mathematics, University of Bristol
+University Walk, Bristol, BS8 1TW, UK
+Email: C.Andrieu@bristol.ac.uk
+
+
+REQUIREMENTS :
+--------------
+
+FORTRAN compiler (tested with gfortran 4.6.3 and ifort 10 )
+
+FILES :
+-------
+
+Makefile	               :	Makefile
+
+aisrjnmix_pro.f90       :  Main program
+
+splitmergemove_mod.f90  :  Routines related to annealing procedure
+
+fixedmove_mod.f90       :  Fixed dimension Metropolis-Hastings updates
+
+rngbeta.f90             :  Beta random number generator
+
+rnggamma.f90            :  Gamma random number generator
+
+rngnormal.f             :  Gaussian random number generator
+
+rnguniform.f	         :  Uniform random number generator
+
+algama.f                :  Gamma function (log scale)
+
+results/                :  Folder for the output of the program 
+
+aisrj.exe               :  Binary file  
+
+      input :
+         -Nsweep=       number of iterations
+            ( default : -Nsweep=2*10**5 )
+         -Nburnin=      number of burn-in iterations
+            ( default : -Nburnin=2*10**2 )
+         -Tau=          number of intermediate distributions {0: only fixed dim modes, 1: stdRJ, >1:siaRJ}
+            ( default : -Tau=1 )
+         -Qtype=        type of the marginal model proposal {0 | 1 | 2}
+            ( default : -Qtype=2 )
+         -kseed=        initial number of change points (seed of the Markov chain)
+            ( default : -kseed=3 )
+         'dataset path' directory to the dataset file
+            ( default : ./dataset/enzymedata )
+         -kmin=         minimum number of components
+            ( default : -kmin=1 )
+         -kmax=         maximum number of components
+            ( default : -kmax=30 )
+         -xi=           xi hyperparameter of means 
+            ( default : Ref Richardson and Green 1997 )
+         -kappa=        kappa hyperparameter of means 
+            ( default : Ref Richardson and Green 1997 )
+         -alpha=        alpha hyperparameter of variances 
+            ( default : Ref Richardson and Green 1997 )
+         -ge=           ge hyperparameter of beta hyperparameter of variances 
+            ( default : Ref Richardson and Green 1997 )
+         -ha=           ha hyperparameter of beta hyperparameter of variances 
+            ( default : Ref Richardson and Green 1997 )
+         -delta=        delta hyperparameter of weights 
+            ( default : Ref Richardson and Green 1997 )
+         -scaleW=       scale of the proposals of the Metropolis update for the weights
+                              fixed dimension updates
+            ( default : -scaleW=0.27 )
+         -scaleM=       scale of the proposals of the Metropolis update for the means
+                              fixed dimension updates
+            ( default : -scaleM=0.018 )
+         -scaleS=       scale of the proposals of the Metropolis update for the variances
+                              fixed dimension updates
+            ( default : -scaleS=0.29 )
+         -scaleWais=    scale of the proposals of the Metropolis update for the weights
+                              annealing importance updates
+            ( default : equal to that of the fixed dimension updates )
+         -scaleMais=    scale of the proposals of the Metropolis update for the means
+                              annealing importance updates
+            ( default : equal to that of the fixed dimension updates )
+         -scaleSais=    scale of the proposals of the Metropolis update for the variances
+                              annealing importance updates
+            ( default : equal to that of the fixed dimension updates )
+         
+      output :
+         ./results/log.T#        summary information
+         ./results/k.T#          sample of between model random parameter
+         ./results/w.T#          sample of weights
+         ./results/m.T#          sample of means
+         ./results/s.T#          sample of variances
+         ./results/b.T#          sample of beta hyper-parameter of variance
+         ./results/move.T#       sample of RJ moves e.g. " 1 2 ", if "1 -> 2"
+         ./results/logAIW.T#     sample of AIS weights in log scale
+         ./results/AccPrRJ.T#    sample of acceptance probabilities
+
+      examples :
+         aisrj.exe -Tau=10 ./dataset/enzymedata
+         
+
