@@ -7,6 +7,13 @@ number of components.
 
 It includes the classical Enzyme data set.
 
+REFERENCES:
+-----------
+
+Karagiannis, G., & Andrieu, C. (2013). 
+Annealed importance sampling reversible jump MCMC algorithms. 
+Journal of Computational and Graphical Statistics, 22(3), 623-648.
+
 CONTACT DETAILS :
 -----------------
 
@@ -112,11 +119,4 @@ aisrj.exe               :  Binary file
       examples :
          aisrj.exe -Tau=10 ./dataset/enzymedata
          
-
-REFERENCES:
------------
-
-Karagiannis, G., & Andrieu, C. (2013). 
-Annealed importance sampling reversible jump MCMC algorithms. 
-Journal of Computational and Graphical Statistics, 22(3), 623-648.
 
