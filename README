@@ -1,3 +1,21 @@
+DESCRIPTION :
+-------------
+
+A FORTRAN implementation of AISRJ on the 
+Bayesian Gaussian mixture model with unknown 
+number of components. 
+
+It includes the classical Enzyme data set.
+
+Georgios Karagiannis (Copyright 2012)
+
+REFERENCES:
+-----------
+
+Karagiannis, G., & Andrieu, C. (2013). 
+Annealed importance sampling reversible jump MCMC algorithms. 
+Journal of Computational and Graphical Statistics, 22(3), 623-648.
+
 CONTACT DETAILS :
 -----------------
 
@@ -10,12 +28,6 @@ Christophe Andrieu
 School of Mathematics, University of Bristol
 University Walk, Bristol, BS8 1TW, UK
 Email: C.Andrieu@bristol.ac.uk
-
--------------
-
-Georgios Karagiannis (Copyright 2012)
-
--------------
 
 REQUIREMENTS :
 --------------
@@ -39,7 +51,7 @@ rnggamma.f90            :  Gamma random number generator
 
 rngnormal.f             :  Gaussian random number generator
 
-rnguniform.f	         :  Uniform random number generator
+rnguniform.f            :  Uniform random number generator
 
 algama.f                :  Gamma function (log scale)
 
