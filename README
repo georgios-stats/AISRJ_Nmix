@@ -11,6 +11,11 @@ School of Mathematics, University of Bristol
 University Walk, Bristol, BS8 1TW, UK
 Email: C.Andrieu@bristol.ac.uk
 
+-------------
+
+Georgios Karagiannis (Copyright 2012)
+
+-------------
 
 REQUIREMENTS :
 --------------
@@ -20,7 +25,7 @@ FORTRAN compiler (tested with gfortran 4.6.3 and ifort 10 )
 FILES :
 -------
 
-Makefile	               :	Makefile
+Makefile                :  Makefile
 
 aisrjnmix_pro.f90       :  Main program
 
