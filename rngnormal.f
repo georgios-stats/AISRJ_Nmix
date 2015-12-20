@@ -1,3 +1,6 @@
+c	The Author of this code is Prof Peter Green (University of Bristol), 
+c	and I borrowed this bit of code from the Nmix program.
+
 c	FROM PJG GAUSS4.F
 
 	subroutine rngnormal(z,n)

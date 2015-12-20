@@ -136,6 +136,6 @@ aisrj.exe               :  Binary file
          ./results/AccPrRJ.T#    sample of acceptance probabilities
 
       examples :
-         aisrj.exe -Tau=10 ./dataset/enzymedata
+         ./aisrj.exe -Tau=10 ./dataset/enzymedata
          
 

@@ -51,10 +51,6 @@ program aisrjnmix_pro
 
       implicit none
 
-      ! FOR THE NUMBER GENERATOR
-
-      integer                 :: seed
-
       ! PARAMETERS OF THE ALGORITHM (GENERAL)
 
       integer                 :: nsweeps,nburnin
@@ -235,19 +231,9 @@ program aisrjnmix_pro
 
 ! START THE RANDOM NUMBER GENERATOR ====================================
 
-      call system_clock(count=seed)
-      seed = seed/2
-      call init_genrand(seed)
+      call init_seedrng()
       do i = 1,5
             call rnguniform(u)
-      end do
-
-      ! REPORT LOG -----------------------------------------------------
-
-      do idisp = 0,1
-      write(idisp,*) ' '
-      write(idisp,*) 'RNG SEED                        : ', seed
-      write(idisp,*) ' '
       end do
 
 ! READ THE DATASET =====================================================
